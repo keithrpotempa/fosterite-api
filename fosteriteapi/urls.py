@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework import routers
+from rest_framework.authtoken.views import obtain_auth_token
+from django.views.static import serve
+from django.conf import settings
+from django.conf.urls.static import static
+
 from fosteriteapp.models import *
 
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'cats', Cats, 'cat')
+
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
 ]

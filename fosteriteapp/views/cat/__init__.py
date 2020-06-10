@@ -1,0 +1,1 @@
+from .cat_serializer import CatSerializer
