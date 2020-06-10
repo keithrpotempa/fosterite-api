@@ -1,5 +1,5 @@
 from django.db import models
-from .Animal import Animal
+from .cat import Cat
 
 class Vaccination(models.Model):
   
@@ -8,7 +8,7 @@ class Vaccination(models.Model):
         
         Arguments Required:
             name -- CharField
-            animal -- Foreign Key for Animal
+            cat -- Foreign Key for Cat
             fvrcp1 -- boolean
             fvrcp2 -- boolean
             rabies -- boolean
@@ -16,7 +16,7 @@ class Vaccination(models.Model):
     '''
     
     name = models.CharField(max_length=55)
-    animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING)
+    cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
     fvrcp1 = models.BooleanField()
     fvrcp2 = models.BooleanField()
     rabies = models.BooleanField()

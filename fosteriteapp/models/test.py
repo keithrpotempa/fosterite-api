@@ -1,5 +1,5 @@
 from django.db import models
-from .animal import Animal
+from .cat import Cat
 
 class Test(models.Model):
   
@@ -8,13 +8,13 @@ class Test(models.Model):
         
         Arguments Required:
             name -- CharField
-            animal -- Foreign Key for Animal
+            animal -- Foreign Key for Cat
             date -- datefield
             tested_positive -- boolean
     '''
     
     name = models.CharField(max_length=55)
-    animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING)
+    cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
     date = models.DateField()
     tested_positive = models.BooleanField()
 
