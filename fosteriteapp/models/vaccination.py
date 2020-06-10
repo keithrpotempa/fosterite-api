@@ -1,14 +1,14 @@
 from django.db import models
-from .cat import Cat
+from .Animal import Animal
 
-class Vaccination (models.Model):
+class Vaccination(models.Model):
   
     '''
         Vaccination Model
         
         Arguments Required:
             name -- CharField
-            cat -- Foreign Key for Cat
+            animal -- Foreign Key for Animal
             fvrcp1 -- boolean
             fvrcp2 -- boolean
             rabies -- boolean
@@ -16,7 +16,7 @@ class Vaccination (models.Model):
     '''
     
     name = models.CharField(max_length=55)
-    cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
+    animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING)
     fvrcp1 = models.BooleanField()
     fvrcp2 = models.BooleanField()
     rabies = models.BooleanField()

@@ -1,6 +1,6 @@
 from django.db import models
 
-class AdoptionStatus (models.Model):
+class AdoptionStatus(models.Model):
   
     '''
         Adoption Status Model

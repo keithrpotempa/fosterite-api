@@ -1,10 +1,11 @@
 from django.db import models
 from django.db.models import F
 from .foster import Foster
-from .adoption_status import AdoptionStatus
-from .litter import Litter
+# from .adoption_status import AdoptionStatus
+# from .litter import Litter
 
-class Cat (models.Model):
+class Cat(models.Model):
+    
     '''
         Cat Model:
 
@@ -13,7 +14,7 @@ class Cat (models.Model):
             birth_date -- date field
             name -- character field
             litter -- foreign key for Litter
-            bonded_pair_cat -- foreign key for Cat (or null)
+            bonded_pair_cat -- foreign key for Animal (or null)
             sex -- character field
             fixed_date -- date field
             created_date -- datetime field
@@ -29,17 +30,17 @@ class Cat (models.Model):
     creator = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
     birth_date = models.DateField()
     name = models.CharField(max_length=50)
-    litter = models.ForeignKey(Litter, on_delete=models.DO_NOTHING)
-    bonded_pair_cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
+    # litter = models.ForeignKey(Litter, on_delete=models.DO_NOTHING)
+    # bonded_pair_cat = models.ForeignKey(Animal, on_delete=models.DO_NOTHING)
     sex = models.CharField(max_length=10)
     fixed_date = models.DateField(blank=True, null=True)
     created_date = models.DateTimeField()
     modified_date = models.DateTimeField(auto_now=True)
-    adoption_status = models.ForeignKey(AdoptionStatus, on_delete=models.DO_NOTHING)
+    # adoption_status = models.ForeignKey(AdoptionStatus, on_delete=models.DO_NOTHING)
     image_path = models.ImageField(blank=True, null=True)
     breed_id = models.IntegerField()
     adopted_date = models.DateField(blank=True, null=True)
-    adopted_id = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
+    # adopted_id = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return f'{self.title}'
