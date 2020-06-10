@@ -12,7 +12,10 @@ class Litter(models.Model):
     '''
     
     name = models.CharField(max_length=55)
-    mother = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
-
+    mother = models.ForeignKey(
+        Cat, 
+        related_name="+",
+        on_delete=models.DO_NOTHING
+    )
     def __str__(self):
         return self.name

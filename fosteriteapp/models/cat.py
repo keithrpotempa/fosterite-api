@@ -2,7 +2,6 @@ from django.db import models
 from django.db.models import F
 from .foster import Foster
 from .adoption_status import AdoptionStatus
-# from .litter import Litter
 
 class Cat(models.Model):
     
@@ -30,12 +29,13 @@ class Cat(models.Model):
     creator = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
     birth_date = models.DateField()
     name = models.CharField(max_length=50)
-    # litter = models.ForeignKey(
-    #     Litter, 
-    #     on_delete=models.DO_NOTHING, 
-    #     blank=True, 
-    #     null=True
-    # )
+    #https://stackoverflow.com/questions/44601550/how-to-solve-the-circular-import-error-in-django
+    litter = models.ForeignKey(
+        to="fosteriteapp.litter", 
+        on_delete=models.DO_NOTHING, 
+        blank=True, 
+        null=True
+    )
     # https://docs.djangoproject.com/en/dev/ref/models/fields/#foreignkey
     bonded_pair_cat = models.ForeignKey('self', on_delete=models.DO_NOTHING)
     sex = models.CharField(max_length=10)
