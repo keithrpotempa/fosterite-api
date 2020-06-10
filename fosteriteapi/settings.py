@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fosteriteapp'
+    'fosteriteapp',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
