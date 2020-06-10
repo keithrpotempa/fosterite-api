@@ -1,5 +1,6 @@
 from django.db import models
-from . import Cat, Foster
+from .cat import Cat
+from .foster import Foster
 
 class FosterRelationship (models.Model):
   
@@ -19,4 +20,4 @@ class FosterRelationship (models.Model):
     end_date = models.DateField(null=True, blank=True)
 
     def __str__(self):
-        return f"{cat.name} fostered by {foster.user.first_name} {foster.user.last_name}"
+        return f"{self.cat.name} fostered by {self.foster.user.first_name} {self.foster.user.last_name}"

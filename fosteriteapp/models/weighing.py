@@ -1,5 +1,6 @@
 from django.db import models
-from . import Cat, Foster
+from .cat import Cat
+from .foster import Foster
 
 class Weighing (models.Model):
   

@@ -1,5 +1,5 @@
 from django.db import models
-from . import Cat
+from .cat import Cat
 
 class Litter (models.Model):
   

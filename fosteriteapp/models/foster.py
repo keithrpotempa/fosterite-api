@@ -3,8 +3,7 @@ from django.urls import reverse
 from django.db.models import F
 from django.contrib.auth.models import User
 
-
-class Foster(models.Model):
+class Foster (models.Model):
     '''
         Foster Model 
         

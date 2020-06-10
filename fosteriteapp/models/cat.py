@@ -1,8 +1,10 @@
 from django.db import models
 from django.db.models import F
-from . import Foster, AdoptionStatus, Litter
+from .foster import Foster
+from .adoption_status import AdoptionStatus
+from .litter import Litter
 
-class Cat(SafeDeleteModel):
+class Cat (models.Model):
     '''
         Cat Model:
 
