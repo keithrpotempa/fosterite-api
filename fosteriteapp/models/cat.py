@@ -30,7 +30,12 @@ class Cat(models.Model):
     creator = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
     birth_date = models.DateField()
     name = models.CharField(max_length=50)
-    # litter = models.ForeignKey(Litter, on_delete=models.DO_NOTHING)
+    # litter = models.ForeignKey(
+    #     Litter, 
+    #     on_delete=models.DO_NOTHING, 
+    #     blank=True, 
+    #     null=True
+    # )
     # https://docs.djangoproject.com/en/dev/ref/models/fields/#foreignkey
     bonded_pair_cat = models.ForeignKey('self', on_delete=models.DO_NOTHING)
     sex = models.CharField(max_length=10)

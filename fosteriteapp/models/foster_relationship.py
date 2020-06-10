@@ -1,5 +1,5 @@
 from django.db import models
-from .animal import Animal
+from .cat import Cat
 from .foster import Foster
 
 class FosterRelationship(models.Model):
@@ -14,7 +14,7 @@ class FosterRelationship(models.Model):
             end_date -- date field, can be null            
     '''
     
-    animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING)
+    cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
     foster = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
