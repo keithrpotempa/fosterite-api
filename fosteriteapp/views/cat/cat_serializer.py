@@ -3,7 +3,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-
+from fosteriteapp.models import Cat
 
 class CatSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for Cats
@@ -13,7 +13,7 @@ class CatSerializer(serializers.HyperlinkedModelSerializer):
     """
 
     class Meta:
-        model = PaymentType
+        model = Cat
         url = serializers.HyperlinkedIdentityField(
             view_name='cats',
             lookup_field='id'
