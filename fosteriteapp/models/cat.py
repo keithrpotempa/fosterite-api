@@ -31,7 +31,8 @@ class Cat(models.Model):
     birth_date = models.DateField()
     name = models.CharField(max_length=50)
     # litter = models.ForeignKey(Litter, on_delete=models.DO_NOTHING)
-    # bonded_pair_cat = models.ForeignKey(Animal, on_delete=models.DO_NOTHING)
+    # https://docs.djangoproject.com/en/dev/ref/models/fields/#foreignkey
+    bonded_pair_cat = models.ForeignKey('self', on_delete=models.DO_NOTHING)
     sex = models.CharField(max_length=10)
     fixed_date = models.DateField(blank=True, null=True)
     created_date = models.DateTimeField()
@@ -40,7 +41,12 @@ class Cat(models.Model):
     image_path = models.ImageField(blank=True, null=True)
     breed_id = models.IntegerField()
     adopted_date = models.DateField(blank=True, null=True)
-    # adopted_id = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
+    # Stretch goal to return to:
+    adopted_id = models.ForeignKey(
+        Foster, 
+        related_name="+",
+        on_delete=models.DO_NOTHING
+    )
 
     def __str__(self):
         return f'{self.title}'
