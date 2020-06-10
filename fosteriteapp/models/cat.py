@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import F
 from .foster import Foster
-# from .adoption_status import AdoptionStatus
+from .adoption_status import AdoptionStatus
 # from .litter import Litter
 
 class Cat(models.Model):
@@ -37,11 +37,11 @@ class Cat(models.Model):
     fixed_date = models.DateField(blank=True, null=True)
     created_date = models.DateTimeField()
     modified_date = models.DateTimeField(auto_now=True)
-    # adoption_status = models.ForeignKey(AdoptionStatus, on_delete=models.DO_NOTHING)
+    adoption_status = models.ForeignKey(AdoptionStatus, default=1, on_delete=models.DO_NOTHING)
     image_path = models.ImageField(blank=True, null=True)
     breed_id = models.IntegerField()
     adopted_date = models.DateField(blank=True, null=True)
-    # Stretch goal to return to:
+    # https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.ForeignKey.related_name
     adopted_id = models.ForeignKey(
         Foster, 
         related_name="+",

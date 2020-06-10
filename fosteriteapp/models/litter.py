@@ -1,5 +1,5 @@
 from django.db import models
-from .animal import Animal
+from .cat import Cat
 
 class Litter(models.Model):
   
@@ -8,11 +8,11 @@ class Litter(models.Model):
         
         Arguments Required:
             name -- CharField
-            mother -- Foreign Key for Animal
+            mother -- Foreign Key for Cat
     '''
     
     name = models.CharField(max_length=55)
-    mother = models.ForeignKey(Animal, on_delete=models.DO_NOTHING)
+    mother = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.name
