@@ -21,7 +21,7 @@ class Foster(models.Model):
     '''
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    looking_to_foster = models.models.BooleanField(null=True, blank=True, default=False)
+    looking_to_foster = models.BooleanField(null=True, blank=True, default=False)
     phone = models.CharField(max_length=20)    
     street = models.CharField(max_length=55)
     city = models.CharField(max_length=30)
