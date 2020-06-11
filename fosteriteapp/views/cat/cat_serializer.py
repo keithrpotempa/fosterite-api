@@ -22,6 +22,6 @@ class CatSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'creator_id', "birth_date", "name",
                 "litter_id", "bonded_pair_cat_id", "sex",
                 "fixed_date", "created_date", "modified_date",
-                "adoption_status_id", "image_path", "breed_id",
+                "adoption_status_id", "image_path", "breed",
                 "adopted_date", "adopted_id"
         )
