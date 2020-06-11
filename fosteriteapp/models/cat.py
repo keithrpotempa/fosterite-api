@@ -27,7 +27,7 @@ class Cat(models.Model):
     '''
     
     creator = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
-    birth_date = models.DateField()
+    birth_date = models.DateField(blank=True, null=True)
     name = models.CharField(max_length=50)
     #https://stackoverflow.com/questions/44601550/how-to-solve-the-circular-import-error-in-django
     litter = models.ForeignKey(
@@ -37,20 +37,27 @@ class Cat(models.Model):
         null=True
     )
     # https://docs.djangoproject.com/en/dev/ref/models/fields/#foreignkey
-    bonded_pair_cat = models.ForeignKey('self', on_delete=models.DO_NOTHING)
+    bonded_pair_cat = models.ForeignKey(
+        'self', 
+        on_delete=models.DO_NOTHING,
+        blank=True,
+        null=True
+    )
     sex = models.CharField(max_length=10)
     fixed_date = models.DateField(blank=True, null=True)
     created_date = models.DateTimeField()
     modified_date = models.DateTimeField(auto_now=True)
     adoption_status = models.ForeignKey(AdoptionStatus, default=1, on_delete=models.DO_NOTHING)
     image_path = models.ImageField(blank=True, null=True)
-    breed_id = models.IntegerField()
+    breed = models.IntegerField()
     adopted_date = models.DateField(blank=True, null=True)
     # https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.ForeignKey.related_name
-    adopted_id = models.ForeignKey(
+    adopted = models.ForeignKey(
         Foster, 
         related_name="+",
-        on_delete=models.DO_NOTHING
+        on_delete=models.DO_NOTHING,
+        blank=True, 
+        null=True
     )
 
     def __str__(self):
