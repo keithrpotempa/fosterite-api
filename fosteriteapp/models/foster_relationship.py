@@ -8,7 +8,7 @@ class FosterRelationship(models.Model):
         Foster Relationship Model
         
         Arguments Required:
-            animal -- Foreign Key for Animal
+            cat -- Foreign Key for Cat
             foster -- Foreign Key for Foster
             start_date -- date field
             end_date -- date field, can be null            
