@@ -1,0 +1,246 @@
+[
+  {
+    "model": "fosteriteapp.adoptionstatus",
+    "pk": 1,
+    "fields": {
+      "name": "Not Ready to Adopt"
+    }
+  },
+  {
+    "model": "fosteriteapp.adoptionstatus",
+    "pk": 2,
+    "fields": {
+      "name": "Needs Foster"
+    }
+  },
+  {
+    "model": "fosteriteapp.adoptionstatus",
+    "pk": 3,
+    "fields": {
+      "name": "Ready to Adopt"
+    }
+  },
+  {
+    "model": "fosteriteapp.adoptionstatus",
+    "pk": 4,
+    "fields": {
+      "name": "Adopted"
+    }
+  },
+  {
+    "model": "fosteriteapp.cat",
+    "pk": 1,
+    "fields": {
+      "creator": 1,
+      "birth_date": "2020-03-27",
+      "name": "Rocket Fizz",
+      "litter": 1,
+      "bonded_pair_cat": null,
+      "sex": "Female",
+      "fixed_date": "2020-05-29",
+      "created_date": "2020-03-27T00:00:00Z",
+      "modified_date": "2020-03-27T00:00:00Z",
+      "adoption_status": 1,
+      "image_path": null,
+      "breed": 1,
+      "adopted_date": null,
+      "adopted": null
+    }
+  },
+  {
+    "model": "fosteriteapp.cat",
+    "pk": 2,
+    "fields": {
+      "creator": 1,
+      "birth_date": "2020-03-27",
+      "name": "Rickey",
+      "litter": 1,
+      "bonded_pair_cat": null,
+      "sex": "Male",
+      "fixed_date": "2020-05-29",
+      "created_date": "2020-03-27T00:00:00Z",
+      "modified_date": "2020-03-27T00:00:00Z",
+      "adoption_status": 1,
+      "image_path": null,
+      "breed": 1,
+      "adopted_date": null,
+      "adopted": null
+    }
+  },
+  {
+    "model": "fosteriteapp.cat",
+    "pk": 3,
+    "fields": {
+      "creator": 1,
+      "birth_date": "2020-03-27",
+      "name": "Jolt",
+      "litter": 1,
+      "bonded_pair_cat": null,
+      "sex": "Male",
+      "fixed_date": "2020-05-29",
+      "created_date": "2020-03-27T00:00:00Z",
+      "modified_date": "2020-03-27T00:00:00Z",
+      "adoption_status": 1,
+      "image_path": null,
+      "breed": 1,
+      "adopted_date": null,
+      "adopted": null
+    }
+  },
+  {
+    "model": "fosteriteapp.cat",
+    "pk": 4,
+    "fields": {
+      "creator": 1,
+      "birth_date": null,
+      "name": "Zimmer",
+      "litter": null,
+      "bonded_pair_cat": null,
+      "sex": "Female",
+      "fixed_date": "2020-05-29",
+      "created_date": "2020-03-27T00:00:00Z",
+      "modified_date": "2020-03-27T00:00:00Z",
+      "adoption_status": 4,
+      "image_path": null,
+      "breed": 1,
+      "adopted_date": null,
+      "adopted": null
+    }
+  },
+  {
+    "model": "fosteriteapp.foster",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "looking_to_foster": true,
+      "phone": "775-757-7757",
+      "street": "909 Main Street",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": 37206,
+      "created_date": "2020-03-27T00:00:00Z",
+      "modified_date": "2020-03-27T00:00:00Z"
+    }
+  }, 
+  {
+    "model": "fosteriteapp.foster",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "looking_to_foster": true,
+      "phone": "777-777-7757",
+      "street": "707 Main Street",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": 37206,
+      "created_date": "2020-03-27T00:00:00Z",
+      "modified_date": "2020-03-27T00:00:00Z"
+    }
+  }, 
+  {
+    "model": "fosteriteapp.fosterrelationship",
+    "pk": 1,
+    "fields": {
+      "cat": 1,
+      "foster": 2,
+      "start_date": "2020-03-27",
+      "end_date": null
+    }
+  },
+  {
+    "model": "fosteriteapp.fosterrelationship",
+    "pk": 2,
+    "fields": {
+      "cat": 2,
+      "foster": 1,
+      "start_date": "2020-03-27",
+      "end_date": null
+    }
+  },
+  {
+    "model": "fosteriteapp.fosterrelationship",
+    "pk": 3,
+    "fields": {
+      "cat": 3,
+      "foster": 1,
+      "start_date": "2020-03-27",
+      "end_date": "2020-06-01"
+    }
+  },
+  {
+    "model": "fosteriteapp.litter",
+    "pk": 1,
+    "fields":{
+      "name": "Soda Pops",
+      "mother": 4
+    }
+  },
+  {
+    "model": "fosteriteapp.test",
+    "pk": 1,
+    "fields": {
+      "name": "FILV",
+      "cat": 1,
+      "date": "2020-03-27",
+      "tested_positive": false
+    }
+  },
+  {
+    "model": "fosteriteapp.vaccination",
+    "pk": 1,
+    "fields": {
+      "cat": 1,
+      "fvrcp1": true,
+      "fvrcp2": false,
+      "rabies": false,
+      "date": "2020-03-27"
+    }
+  },
+  {
+    "model": "fosteriteapp.weighing",
+    "pk": 1,
+    "fields": {
+      "cat": 1,
+      "weight": 50,
+      "user": 1,
+      "created_date": "2019-09-23T14:06:30.047Z",
+      "modified_date": "2019-09-23T14:06:30.047Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$10yCtpQpDTEI$PwDkDJvyKpH7xSLQhOXl2yY7t3yxu59/l6eEtDT0Hm8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kpotempa",
+      "first_name": "Keith",
+      "last_name": "Potempa",
+      "email": "kpotempa@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-09-23T14:06:30.047Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$10yCtpQpDTEI$PwDkDJvyKpH7xSLQhOXl2yY7t3yxu59/l6eEtDT0Hm8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "fpotempa",
+      "first_name": "Freya",
+      "last_name": "Potempa",
+      "email": "fpotempa@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-09-23T14:06:30.047Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

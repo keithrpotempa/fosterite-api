@@ -7,7 +7,6 @@ class Vaccination(models.Model):
         Vaccination Model
         
         Arguments Required:
-            name -- CharField
             cat -- Foreign Key for Cat
             fvrcp1 -- boolean
             fvrcp2 -- boolean
@@ -15,7 +14,6 @@ class Vaccination(models.Model):
             date -- datefield
     '''
     
-    name = models.CharField(max_length=55)
     cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
     fvrcp1 = models.BooleanField()
     fvrcp2 = models.BooleanField()
