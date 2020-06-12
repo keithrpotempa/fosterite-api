@@ -49,7 +49,7 @@ class Cat(models.Model):
     modified_date = models.DateTimeField(auto_now=True)
     adoption_status = models.ForeignKey(AdoptionStatus, default=1, on_delete=models.DO_NOTHING)
     image_path = models.ImageField(blank=True, null=True)
-    breed = models.IntegerField()
+    breed = models.IntegerField(default=1)
     adopted_date = models.DateField(blank=True, null=True)
     # https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.ForeignKey.related_name
     adopted = models.ForeignKey(

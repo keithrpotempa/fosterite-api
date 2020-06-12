@@ -80,9 +80,8 @@ class Cats(ViewSet):
         # TODO: instance instead of fk?
         cat.creator_id = request.data["creator_id"]
         cat.birth_date = request.data["birth_date"]
-        # TODO: instance instead of fk?
-        # TODO: instance instead of fk?
-        cat.breed = request.data["breed"]
+        # FIXME: implement if stretch goal reached
+        cat.breed = 1
         cat.sex = request.data["sex"]
         
         ## Optional Arguments
