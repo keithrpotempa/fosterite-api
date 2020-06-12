@@ -14,8 +14,8 @@ class FosterRelationship(models.Model):
             end_date -- date field, can be null            
     '''
     
-    cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
-    foster = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
+    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
+    foster = models.ForeignKey(Foster, on_delete=models.CASCADE)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
 

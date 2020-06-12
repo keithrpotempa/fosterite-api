@@ -32,14 +32,14 @@ class Cat(models.Model):
     #https://stackoverflow.com/questions/44601550/how-to-solve-the-circular-import-error-in-django
     litter = models.ForeignKey(
         to="fosteriteapp.litter", 
-        on_delete=models.DO_NOTHING, 
+        on_delete=models.SET_NULL, 
         blank=True, 
         null=True
     )
     # https://docs.djangoproject.com/en/dev/ref/models/fields/#foreignkey
     bonded_pair_cat = models.ForeignKey(
         'self', 
-        on_delete=models.DO_NOTHING,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True
     )
@@ -55,7 +55,7 @@ class Cat(models.Model):
     adopted = models.ForeignKey(
         Foster, 
         related_name="+",
-        on_delete=models.DO_NOTHING,
+        on_delete=models.SET_NULL,
         blank=True, 
         null=True
     )

@@ -15,7 +15,7 @@ class Weighing(models.Model):
             modified_date -- datetime
     '''
     
-    cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
+    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
     weight = models.IntegerField()
     user = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
     created_date = models.DateTimeField()

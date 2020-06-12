@@ -14,7 +14,7 @@ class Vaccination(models.Model):
             date -- datefield
     '''
     
-    cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
+    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
     fvrcp1 = models.BooleanField()
     fvrcp2 = models.BooleanField()
     rabies = models.BooleanField()
