@@ -33,7 +33,7 @@ def register_user(request):
         foster = Foster.objects.create(
             user=new_user,
             looking_to_foster=req_body['looking_to_foster'],
-            phone=req_body['phone_number'],
+            phone=req_body['phone'],
             street=req_body['street'],
             city=req_body['city'],
             state=req_body['state'],
