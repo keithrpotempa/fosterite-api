@@ -7,6 +7,7 @@ from .cat_list import cat_list
 from .cat_retrieve import cat_retrieve
 from .cat_destroy import cat_destroy
 from .cat_create import cat_create 
+from .cat_update import cat_update
 
 class Cats(ViewSet):
     '''
@@ -23,3 +24,6 @@ class Cats(ViewSet):
     
     def create(self, request):
         return cat_create(self, request)
+    
+    def update(self, request, pk=None):
+        return cat_update(self, request, pk)
