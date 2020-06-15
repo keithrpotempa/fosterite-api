@@ -15,7 +15,9 @@ class Litter(models.Model):
     mother = models.ForeignKey(
         Cat, 
         related_name="+",
-        on_delete=models.DO_NOTHING
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True
     )
     def __str__(self):
         return self.name

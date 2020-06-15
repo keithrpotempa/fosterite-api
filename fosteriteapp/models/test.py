@@ -14,7 +14,7 @@ class Test(models.Model):
     '''
     
     name = models.CharField(max_length=55)
-    cat = models.ForeignKey(Cat, on_delete=models.DO_NOTHING)
+    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
     date = models.DateField()
     tested_positive = models.BooleanField()
 
