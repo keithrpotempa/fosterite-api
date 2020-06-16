@@ -26,6 +26,7 @@ from fosteriteapp.views import *
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'cats', Cats, 'cat')
+router.register(r'fosters', Fosters, 'foster')
 router.register(r'adoptionstatus', AdoptionStatus, 'adoptionstatus')
 router.register(r'users', Users, 'user')
 

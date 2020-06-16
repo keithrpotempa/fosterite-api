@@ -17,4 +17,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         )
 
         fields = ('first_name', 'last_name', "last_login",
-                  "username", "email", "date_joined",)
+                  "username", "email", "date_joined", "foster")
+        
+        depth = 1
