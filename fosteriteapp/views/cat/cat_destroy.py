@@ -1,9 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from fosteriteapp.models import Cat
 from rest_framework import serializers
 from rest_framework import status
 from .cat_serializer import CatSerializer
 
+@login_required
 def cat_destroy(self, request, pk=None):
     """
     Handles DELETE requests for single cat

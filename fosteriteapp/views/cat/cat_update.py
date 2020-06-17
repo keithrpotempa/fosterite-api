@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from fosteriteapp.models import Cat
 from rest_framework import status
 from .cat_request_handler import cat_request_handler
 
+@login_required
 def cat_update(self, request, pk=None):
     """
       Handles PUT requests for cat endpoint view

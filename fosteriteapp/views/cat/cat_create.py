@@ -1,12 +1,13 @@
 from django.utils import timezone
 from django.http import HttpResponseServerError
+from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from .cat_serializer import CatSerializer
 from .cat_request_handler import cat_request_handler
 
-
+@login_required
 def cat_create(self, request):
     """
     Handle POST operations and returns JSON serialized cat instance
