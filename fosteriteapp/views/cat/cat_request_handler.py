@@ -1,5 +1,8 @@
-from fosteriteapp.models import Cat
+import json
+from fosteriteapp.models import Cat, Foster
 from django.utils import timezone
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 
 def cat_request_handler(request, pk=None):
     """
@@ -33,8 +36,9 @@ def cat_request_handler(request, pk=None):
     
     ## BASIC PROFILE
     cat.name = request.data["name"]
-    # TODO: instance instead of fk?
-    cat.creator_id = request.data["creator_id"]
+    # Extracted from the user's token
+    foster = Foster.objects.get(user=request.auth.user)
+    cat.creator = foster
     cat.birth_date = request.data["birth_date"]
     # FIXME: implement if stretch goal reached
     cat.breed = 1
