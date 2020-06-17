@@ -6,7 +6,6 @@ from rest_framework import status
 from .cat_serializer import CatSerializer
 from .cat_request_handler import cat_request_handler
 
-
 def cat_create(self, request):
     """
     Handle POST operations and returns JSON serialized cat instance

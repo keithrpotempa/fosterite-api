@@ -28,3 +28,13 @@ class AdoptionStatus(ViewSet):
         )
         
         return Response(serializer.data)
+    
+    def retrieve(self, request, pk=None):
+        
+        try:
+            status = AdoptionStatus.objects.get(pk=pk)
+            serializer = AdoptionStatusSerializer(
+                status, many=False, context={'request': request})
+            return Response(serializer.data)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
