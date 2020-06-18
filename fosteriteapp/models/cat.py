@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import F
+from django.contrib.auth.models import User
 from .foster import Foster
 from .adoption_status import AdoptionStatus
 
@@ -26,7 +27,7 @@ class Cat(models.Model):
             adopted_id -- foreign key for Foster 
     '''
     
-    creator = models.ForeignKey(Foster, on_delete=models.DO_NOTHING)
+    creator = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     birth_date = models.DateField(blank=True, null=True)
     name = models.CharField(max_length=50)
     #https://stackoverflow.com/questions/44601550/how-to-solve-the-circular-import-error-in-django
@@ -53,7 +54,7 @@ class Cat(models.Model):
     adopted_date = models.DateField(blank=True, null=True)
     # https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.ForeignKey.related_name
     adopted = models.ForeignKey(
-        Foster, 
+        User, 
         related_name="+",
         on_delete=models.SET_NULL,
         blank=True, 
