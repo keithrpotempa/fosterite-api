@@ -37,8 +37,8 @@ def cat_request_handler(request, pk=None):
     ## BASIC PROFILE
     cat.name = request.data["name"]
     # Extracted from the user's token
-    foster = Foster.objects.get(user=request.auth.user)
-    cat.creator = foster
+    user = User.objects.get(pk=request.auth.user.id)
+    cat.creator = user
     cat.birth_date = request.data["birth_date"]
     # FIXME: implement if stretch goal reached
     cat.breed = 1
