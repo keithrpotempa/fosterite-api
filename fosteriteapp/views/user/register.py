@@ -51,7 +51,7 @@ def register_user(request):
         # Return the token to the client
         data = json.dumps(
             {
-                "user_id": foster.id,
+                "user_id": new_user.id,
                 "token": token.key
             }
         )
